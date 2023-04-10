@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import amm.unededucaanalisis.modelo.Asignatura;
-import amm.unededucaanalisis.modelo.Foro;
 import amm.unededucaanalisis.repositorios.ForoRepository;
+import jsv.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Foro;
 
 @Service("ForoService")
 public class ForoServiceImpl implements ForoService {

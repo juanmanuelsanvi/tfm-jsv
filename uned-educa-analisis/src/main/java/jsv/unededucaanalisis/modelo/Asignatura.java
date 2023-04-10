@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.modelo;
+package jsv.unededucaanalisis.modelo;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -11,28 +11,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CONVOCATORIA")
-public class Convocatoria 
+@Table(name = "ASIGNATURA")
+public class Asignatura 
 {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(nullable=false)
-	private String convocatoria;
+	private String denominacion;
 	
 	@Column
 	private Timestamp fechaActualizacion;
 
-	public Convocatoria() {}
+	public Asignatura() {}
 
-	public Convocatoria(Integer id, String convocatoria) 
+	public Asignatura(Integer id, String denominacion) 
 	{
 		this.id = id;
-		this.convocatoria = convocatoria;
+		this.denominacion = denominacion;
 	}
 
-	public Convocatoria(String convocatoria) {
-		this.convocatoria = convocatoria;
+	public Asignatura(String denominacion) {
+		this.denominacion = denominacion;
 	}
 
 	public Integer getId() {
@@ -45,13 +45,13 @@ public class Convocatoria
 
 	@Override
 	public String toString() {
-		return "Convocatoria [id=" + id + ", convocatoria=" + convocatoria + ", fechaActualizacion=" + fechaActualizacion
+		return "Asignatura [id=" + id + ", denominacion=" + denominacion + ", fechaActualizacion=" + fechaActualizacion
 				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(convocatoria, fechaActualizacion, id);
+		return Objects.hash(denominacion, fechaActualizacion, id);
 	}
 
 	@Override
@@ -62,17 +62,17 @@ public class Convocatoria
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Convocatoria other = (Convocatoria) obj;
-		return Objects.equals(convocatoria, other.convocatoria)
+		Asignatura other = (Asignatura) obj;
+		return Objects.equals(denominacion, other.denominacion)
 				&& Objects.equals(fechaActualizacion, other.fechaActualizacion) && id == other.id;
 	}
 
-	public String getConvocatoria() {
-		return convocatoria;
+	public String getDenominacion() {
+		return denominacion;
 	}
 
-	public void setconvocatoria(String convocatoria) {
-		this.convocatoria = convocatoria;
+	public void setDenominacion(String denominacion) {
+		this.denominacion = denominacion;
 	}
 
 	public Timestamp getFechaActualizacion() {

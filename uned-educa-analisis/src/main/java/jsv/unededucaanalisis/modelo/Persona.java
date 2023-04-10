@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.modelo;
+package jsv.unededucaanalisis.modelo;
 
 import java.sql.Timestamp;
 import java.util.Objects;

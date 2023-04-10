@@ -2,7 +2,7 @@ package amm.unededucaanalisis.servicios;
 
 import java.util.List;
 
-import amm.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Asignatura;
 
 public interface AsignaturaService 
 {

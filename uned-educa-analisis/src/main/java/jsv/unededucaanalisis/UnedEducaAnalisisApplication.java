@@ -6,18 +6,18 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import amm.unededucaanalisis.modelo.Asignatura;
 import amm.unededucaanalisis.repositorios.AsignaturaRepository;
-import amm.unededucaanalisis.modelo.Convocatoria;
 import amm.unededucaanalisis.servicios.ConvocatoriaService;
-import amm.unededucaanalisis.modelo.Arista;
 import amm.unededucaanalisis.servicios.AristaService;
 import amm.unededucaanalisis.servicios.AsignaturaService;
-import amm.unededucaanalisis.modelo.Persona;
 import amm.unededucaanalisis.servicios.PersonaService;
+import jsv.unededucaanalisis.modelo.Arista;
+import jsv.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Convocatoria;
+import jsv.unededucaanalisis.modelo.Grafo;
+import jsv.unededucaanalisis.modelo.InfoProcesoForo;
+import jsv.unededucaanalisis.modelo.Persona;
 import amm.unededucaanalisis.servicios.GrafoService;
-import amm.unededucaanalisis.modelo.Grafo;
-import amm.unededucaanalisis.modelo.InfoProcesoForo;
 import amm.unededucaanalisis.servicios.ForoAlumnosService;
 
 @SpringBootApplication

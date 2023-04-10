@@ -2,8 +2,8 @@ package amm.unededucaanalisis.servicios;
 
 import java.util.List;
 
-import amm.unededucaanalisis.modelo.Mensaje;
-import amm.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.modelo.Mensaje;
+import jsv.unededucaanalisis.modelo.Persona;
 
 public interface MensajeService 
 {

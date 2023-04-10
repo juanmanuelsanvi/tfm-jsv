@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import amm.unededucaanalisis.modelo.Asignatura;
-import amm.unededucaanalisis.modelo.Persona;
 import amm.unededucaanalisis.repositorios.PersonaRepository;
+import jsv.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Persona;
 
 @Service("PersonaService")
 public class PersonaServiceImpl implements PersonaService {

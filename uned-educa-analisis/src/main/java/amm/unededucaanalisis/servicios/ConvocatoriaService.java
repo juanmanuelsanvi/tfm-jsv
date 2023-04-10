@@ -2,7 +2,7 @@ package amm.unededucaanalisis.servicios;
 
 import java.util.List;
 
-import amm.unededucaanalisis.modelo.Convocatoria;
+import jsv.unededucaanalisis.modelo.Convocatoria;
 
 public interface ConvocatoriaService 
 {

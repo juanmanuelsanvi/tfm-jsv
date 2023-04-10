@@ -2,8 +2,8 @@ package amm.unededucaanalisis.servicios;
 
 import java.util.List;
 
-import amm.unededucaanalisis.modelo.Asignatura;
-import amm.unededucaanalisis.modelo.Materia;
+import jsv.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Materia;
 
 public interface MateriaService 
 {

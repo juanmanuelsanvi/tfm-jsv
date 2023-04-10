@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import amm.unededucaanalisis.modelo.Asignatura;
-import amm.unededucaanalisis.modelo.Convocatoria;
-import amm.unededucaanalisis.modelo.Grafo;
-import amm.unededucaanalisis.modelo.InfoProcesoForo;
-import amm.unededucaanalisis.modelo.Persona;
 import amm.unededucaanalisis.servicios.AsignaturaService;
 import amm.unededucaanalisis.servicios.ConvocatoriaService;
 import amm.unededucaanalisis.servicios.ForoAlumnosService;
 import amm.unededucaanalisis.servicios.PersonaService;
+import jsv.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Convocatoria;
+import jsv.unededucaanalisis.modelo.Grafo;
+import jsv.unededucaanalisis.modelo.InfoProcesoForo;
+import jsv.unededucaanalisis.modelo.Persona;
 
 
 

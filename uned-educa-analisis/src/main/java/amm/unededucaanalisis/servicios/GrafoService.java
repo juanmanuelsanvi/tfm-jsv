@@ -4,8 +4,8 @@ import java.util.List;
 import java.io.File;
 import java.io.IOException;
 
-import amm.unededucaanalisis.modelo.Grafo;
 import amm.unededucaanalisis.servicios.PersonaService;
+import jsv.unededucaanalisis.modelo.Grafo;
 import amm.unededucaanalisis.servicios.AristaService;
 
 public interface GrafoService 

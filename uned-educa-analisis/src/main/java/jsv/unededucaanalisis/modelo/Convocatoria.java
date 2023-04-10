@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.modelo;
+package jsv.unededucaanalisis.modelo;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -11,28 +11,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ASIGNATURA")
-public class Asignatura 
+@Table(name = "CONVOCATORIA")
+public class Convocatoria 
 {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(nullable=false)
-	private String denominacion;
+	private String convocatoria;
 	
 	@Column
 	private Timestamp fechaActualizacion;
 
-	public Asignatura() {}
+	public Convocatoria() {}
 
-	public Asignatura(Integer id, String denominacion) 
+	public Convocatoria(Integer id, String convocatoria) 
 	{
 		this.id = id;
-		this.denominacion = denominacion;
+		this.convocatoria = convocatoria;
 	}
 
-	public Asignatura(String denominacion) {
-		this.denominacion = denominacion;
+	public Convocatoria(String convocatoria) {
+		this.convocatoria = convocatoria;
 	}
 
 	public Integer getId() {
@@ -45,13 +45,13 @@ public class Asignatura
 
 	@Override
 	public String toString() {
-		return "Asignatura [id=" + id + ", denominacion=" + denominacion + ", fechaActualizacion=" + fechaActualizacion
+		return "Convocatoria [id=" + id + ", convocatoria=" + convocatoria + ", fechaActualizacion=" + fechaActualizacion
 				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(denominacion, fechaActualizacion, id);
+		return Objects.hash(convocatoria, fechaActualizacion, id);
 	}
 
 	@Override
@@ -62,17 +62,17 @@ public class Asignatura
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Asignatura other = (Asignatura) obj;
-		return Objects.equals(denominacion, other.denominacion)
+		Convocatoria other = (Convocatoria) obj;
+		return Objects.equals(convocatoria, other.convocatoria)
 				&& Objects.equals(fechaActualizacion, other.fechaActualizacion) && id == other.id;
 	}
 
-	public String getDenominacion() {
-		return denominacion;
+	public String getConvocatoria() {
+		return convocatoria;
 	}
 
-	public void setDenominacion(String denominacion) {
-		this.denominacion = denominacion;
+	public void setconvocatoria(String convocatoria) {
+		this.convocatoria = convocatoria;
 	}
 
 	public Timestamp getFechaActualizacion() {

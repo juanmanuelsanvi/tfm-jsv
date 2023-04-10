@@ -3,13 +3,13 @@ package amm.unededucaanalisis.servicios;
 import java.io.IOException;
 import java.util.List;
 
-import amm.unededucaanalisis.modelo.Asignatura;
-import amm.unededucaanalisis.modelo.Convocatoria;
-import amm.unededucaanalisis.modelo.Foro;
-import amm.unededucaanalisis.modelo.InfoProcesoForo;
-import amm.unededucaanalisis.modelo.Materia;
-import amm.unededucaanalisis.modelo.Mensaje;
-import amm.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Convocatoria;
+import jsv.unededucaanalisis.modelo.Foro;
+import jsv.unededucaanalisis.modelo.InfoProcesoForo;
+import jsv.unededucaanalisis.modelo.Materia;
+import jsv.unededucaanalisis.modelo.Mensaje;
+import jsv.unededucaanalisis.modelo.Persona;
 
 public interface ForoAlumnosService 
 {

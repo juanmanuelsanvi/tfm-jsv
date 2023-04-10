@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import amm.unededucaanalisis.modelo.Asignatura;
-import amm.unededucaanalisis.modelo.Materia;
 import amm.unededucaanalisis.repositorios.AsignaturaRepository;
 import amm.unededucaanalisis.repositorios.MateriaRepository;
+import jsv.unededucaanalisis.modelo.Asignatura;
+import jsv.unededucaanalisis.modelo.Materia;
 
 @Service("MateriaService")
 public class MateriaServiceImpl implements MateriaService {

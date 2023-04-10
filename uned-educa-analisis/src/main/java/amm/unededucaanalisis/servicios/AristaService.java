@@ -2,7 +2,7 @@ package amm.unededucaanalisis.servicios;
 
 import java.util.List;
 
-import amm.unededucaanalisis.modelo.Arista;
+import jsv.unededucaanalisis.modelo.Arista;
 
 public interface AristaService 
 {

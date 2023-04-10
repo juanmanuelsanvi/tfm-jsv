@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.modelo;
+package jsv.unededucaanalisis.modelo;
 
 public class InfoProcesoForo 
 {

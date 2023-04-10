@@ -11,9 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import amm.unededucaanalisis.modelo.Arista;
-import amm.unededucaanalisis.modelo.Grafo;
-import amm.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.modelo.Arista;
+import jsv.unededucaanalisis.modelo.Grafo;
+import jsv.unededucaanalisis.modelo.Persona;
 
 
 @Service("GrafoService")

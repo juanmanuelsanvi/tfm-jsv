@@ -1,15 +1,14 @@
-package amm.unededucaanalisis.modelo;
+package jsv.unededucaanalisis.modelo;
 
 import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import amm.unededucaanalisis.modelo.Arista;
-import amm.unededucaanalisis.modelo.Persona;
-
 import amm.unededucaanalisis.servicios.AristaService;
 import amm.unededucaanalisis.servicios.PersonaService;
+import jsv.unededucaanalisis.modelo.Arista;
+import jsv.unededucaanalisis.modelo.Persona;
 
 public class Grafo 
 {
