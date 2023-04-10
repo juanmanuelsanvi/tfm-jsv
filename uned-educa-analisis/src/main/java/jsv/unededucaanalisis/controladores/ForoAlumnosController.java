@@ -42,7 +42,7 @@ public class ForoAlumnosController
 	@Autowired
 	private ConvocatoriaService servicioConvocatoria;	
 
-	@Value("${pfgamm.data.rutaficheros}")
+	@Value("${tfmjsv.data.rutaficheros}")
 	private String rutaFicheros;	
 	
 	// Genera la página para la selección del fichero

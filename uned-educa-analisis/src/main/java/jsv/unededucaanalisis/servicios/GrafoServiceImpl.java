@@ -18,9 +18,9 @@ import jsv.unededucaanalisis.modelo.Persona;
 @Service("GrafoService")
 public class GrafoServiceImpl implements GrafoService {
 
-	@Value("${pfgamm.data.ficherografo}")
+	@Value("${tfmjsv.data.ficherografo}")
 	private String ficheroGrafo;
-	@Value("${pfgamm.data.rutaficheros}")
+	@Value("${tfmjsv.data.rutaficheros}")
 	private String rutaFicheros;		
 	
 	@Override
@@ -42,7 +42,7 @@ public class GrafoServiceImpl implements GrafoService {
 
 		FileWriter fileWriter = new FileWriter(rutaFicheros + ficheroGrafo);
 	    PrintWriter printWriter = new PrintWriter(fileWriter);
-	    printWriter.println("Creator \"Alfonso Martín Murillo\"");
+	    printWriter.println("Creator \"JUAN MANUEL SÁNCHEZ VILLAREJO\"");
 	    printWriter.println("graph");	      
 	    printWriter.println("[");
 	    

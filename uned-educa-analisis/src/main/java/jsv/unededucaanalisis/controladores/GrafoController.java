@@ -33,9 +33,9 @@ public class GrafoController
 	private PersonaService servicioPersona;
 	@Autowired
 	private AristaService servicioArista;	
-	@Value("${pfgamm.data.ficherografo}")
+	@Value("${tfmjsv.data.ficherografo}")
 	private String ficheroGrafo;	
-	@Value("${pfgamm.data.rutaficheros}")
+	@Value("${tfmjsv.data.rutaficheros}")
 	private String rutaFicheros;	
 
 	// Genera la lista de datos

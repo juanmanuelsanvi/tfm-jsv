@@ -1,23 +1,8 @@
 package jsv.unededucaanalisis;
 
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import jsv.unededucaanalisis.modelo.Arista;
-import jsv.unededucaanalisis.modelo.Asignatura;
-import jsv.unededucaanalisis.modelo.Convocatoria;
-import jsv.unededucaanalisis.modelo.Grafo;
-import jsv.unededucaanalisis.modelo.InfoProcesoForo;
-import jsv.unededucaanalisis.modelo.Persona;
-import jsv.unededucaanalisis.repositorios.AsignaturaRepository;
-import jsv.unededucaanalisis.servicios.AristaService;
-import jsv.unededucaanalisis.servicios.AsignaturaService;
-import jsv.unededucaanalisis.servicios.ConvocatoriaService;
-import jsv.unededucaanalisis.servicios.ForoAlumnosService;
-import jsv.unededucaanalisis.servicios.GrafoService;
-import jsv.unededucaanalisis.servicios.PersonaService;
 
 @SpringBootApplication
 public class UnedEducaAnalisisApplication {

@@ -8,7 +8,7 @@
 		<version>2.6.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>amm.uned-educa-analisis</groupId>
+	<groupId>jsv.uned-educa-analisis</groupId>
 	<artifactId>uned-educa-analisis</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<name>uned-educa-analisis</name>
