@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.servicios;
+package jsv.unededucaanalisis.servicios;
 
 import java.util.List;
 
@@ -6,23 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jsv.unededucaanalisis.modelo.Asignatura;
-import jsv.unededucaanalisis.modelo.Foro;
-import jsv.unededucaanalisis.repositorios.ForoRepository;
+import jsv.unededucaanalisis.repositorios.AsignaturaRepository;
 
-@Service("ForoService")
-public class ForoServiceImpl implements ForoService {
+@Service("AsignaturaService")
+public class AsignaturaServiceImpl implements AsignaturaService {
 
 	@Autowired
-	private ForoRepository repositorio;
-	
+	private AsignaturaRepository repositorio;
 	@Override
-	public Foro add(Foro a) 
+	public Asignatura add(Asignatura a) 
 	{
 		return repositorio.save(a);		
 	}
 
 	@Override
-	public Foro edit(Foro a) 
+	public Asignatura edit(Asignatura a) 
 	{
 		return repositorio.save(a);
 	}
@@ -35,21 +33,21 @@ public class ForoServiceImpl implements ForoService {
 	
 	
 	@Override
-	public Foro findById(Integer Id) {
+	public Asignatura findById(Integer Id) {
 		// TODO Auto-generated method stub
 		return repositorio.findById(Id).orElse(null);
 	}
 
 	@Override
-	public List<Foro> findAll() 
+	public List<Asignatura> findAll() 
 	{
 		return repositorio.findAll();
 	}
 	
 	@Override
-	public Foro findByIdMateriaAndDenominacion(Integer idMateria, String denominacion) 
+	public Asignatura findByDenominacion(String asignatura) 
 	{	
-		return repositorio.findByIdMateriaAndDenominacion(idMateria, denominacion);
+		return repositorio.findByDenominacion(asignatura);
 	}
 
 }

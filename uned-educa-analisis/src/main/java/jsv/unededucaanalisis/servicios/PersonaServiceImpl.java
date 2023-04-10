@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.servicios;
+package jsv.unededucaanalisis.servicios;
 
 import java.util.List;
 
@@ -6,21 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jsv.unededucaanalisis.modelo.Asignatura;
-import jsv.unededucaanalisis.repositorios.AsignaturaRepository;
+import jsv.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.repositorios.PersonaRepository;
 
-@Service("AsignaturaService")
-public class AsignaturaServiceImpl implements AsignaturaService {
+@Service("PersonaService")
+public class PersonaServiceImpl implements PersonaService {
 
 	@Autowired
-	private AsignaturaRepository repositorio;
+	private PersonaRepository repositorio;
 	@Override
-	public Asignatura add(Asignatura a) 
+	public Persona add(Persona a) 
 	{
 		return repositorio.save(a);		
 	}
 
 	@Override
-	public Asignatura edit(Asignatura a) 
+	public Persona edit(Persona a) 
 	{
 		return repositorio.save(a);
 	}
@@ -33,21 +34,23 @@ public class AsignaturaServiceImpl implements AsignaturaService {
 	
 	
 	@Override
-	public Asignatura findById(Integer Id) {
+	public Persona findById(Integer Id) {
 		// TODO Auto-generated method stub
 		return repositorio.findById(Id).orElse(null);
 	}
 
 	@Override
-	public List<Asignatura> findAll() 
+	public List<Persona> findAll() 
 	{
 		return repositorio.findAll();
 	}
+
 	
 	@Override
-	public Asignatura findByDenominacion(String asignatura) 
+	public Persona findByUsuario(String usuario) 
 	{	
-		return repositorio.findByDenominacion(asignatura);
+		return repositorio.findByUsuario(usuario);
 	}
-
+	
+	
 }

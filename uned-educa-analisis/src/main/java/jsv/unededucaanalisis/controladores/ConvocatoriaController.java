@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import amm.unededucaanalisis.servicios.ConvocatoriaService;
 import jsv.unededucaanalisis.modelo.Convocatoria;
+import jsv.unededucaanalisis.servicios.ConvocatoriaService;
 
 @Controller
 public class ConvocatoriaController 

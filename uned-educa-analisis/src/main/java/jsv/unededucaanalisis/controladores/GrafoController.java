@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import amm.unededucaanalisis.servicios.GrafoService;
-import amm.unededucaanalisis.servicios.PersonaService;
 import jsv.unededucaanalisis.modelo.Grafo;
-import amm.unededucaanalisis.servicios.AristaService;
+import jsv.unededucaanalisis.servicios.AristaService;
+import jsv.unededucaanalisis.servicios.GrafoService;
+import jsv.unededucaanalisis.servicios.PersonaService;
 
 @Controller
 public class GrafoController 

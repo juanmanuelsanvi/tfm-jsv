@@ -5,10 +5,10 @@ import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import amm.unededucaanalisis.servicios.AristaService;
-import amm.unededucaanalisis.servicios.PersonaService;
 import jsv.unededucaanalisis.modelo.Arista;
 import jsv.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.servicios.AristaService;
+import jsv.unededucaanalisis.servicios.PersonaService;
 
 public class Grafo 
 {

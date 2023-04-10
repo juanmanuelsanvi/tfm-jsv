@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import amm.unededucaanalisis.servicios.PersonaService;
 import jsv.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.servicios.PersonaService;
 
 @Controller
 public class personaController 
