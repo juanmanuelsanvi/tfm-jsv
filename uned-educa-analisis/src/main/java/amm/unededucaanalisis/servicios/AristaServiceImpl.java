@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import amm.unededucaanalisis.repositorios.AristaRepository;
 import jsv.unededucaanalisis.modelo.Arista;
+import jsv.unededucaanalisis.repositorios.AristaRepository;
 
 @Service("AristaService")
 public class AristaServiceImpl implements AristaService {

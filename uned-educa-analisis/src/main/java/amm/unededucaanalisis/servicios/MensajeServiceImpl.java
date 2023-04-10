@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import amm.unededucaanalisis.repositorios.MensajeRepository;
-import amm.unededucaanalisis.repositorios.PersonaRepository;
 import jsv.unededucaanalisis.modelo.Asignatura;
 import jsv.unededucaanalisis.modelo.Mensaje;
 import jsv.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.repositorios.MensajeRepository;
+import jsv.unededucaanalisis.repositorios.PersonaRepository;
 
 @Service("MensajeService")
 public class MensajeServiceImpl implements MensajeService {

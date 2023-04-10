@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.repositorios;
+package jsv.unededucaanalisis.repositorios;
 
 import java.util.List;
 

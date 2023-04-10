@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import amm.unededucaanalisis.repositorios.ConvocatoriaRepository;
 import jsv.unededucaanalisis.modelo.Convocatoria;
+import jsv.unededucaanalisis.repositorios.ConvocatoriaRepository;
 
 @Service("ConvocatoriaService")
 public class ConvocatoriaServiceImpl implements ConvocatoriaService {

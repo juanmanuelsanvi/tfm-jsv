@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.apache.commons.csv.*;
 
-import amm.unededucaanalisis.repositorios.ConvocatoriaRepository;
 import jsv.unededucaanalisis.modelo.Asignatura;
 import jsv.unededucaanalisis.modelo.Convocatoria;
 import jsv.unededucaanalisis.modelo.Foro;
@@ -22,6 +21,7 @@ import jsv.unededucaanalisis.modelo.InfoProcesoForo;
 import jsv.unededucaanalisis.modelo.Materia;
 import jsv.unededucaanalisis.modelo.Mensaje;
 import jsv.unededucaanalisis.modelo.Persona;
+import jsv.unededucaanalisis.repositorios.ConvocatoriaRepository;
 
 @Service("ForoAlumnosService")
 public class ForoAlumnosServiceImpl implements ForoAlumnosService 
