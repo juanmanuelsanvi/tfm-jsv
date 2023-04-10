@@ -1,4 +1,4 @@
-package amm.unededucaanalisis;
+package jsv.unededucaanalisis;
 
 
 import org.springframework.boot.CommandLineRunner;

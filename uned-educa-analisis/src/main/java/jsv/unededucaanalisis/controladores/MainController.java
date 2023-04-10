@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.controladores;
+package jsv.unededucaanalisis.controladores;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

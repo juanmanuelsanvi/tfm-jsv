@@ -1,4 +1,4 @@
-package amm.unededucaanalisis.controladores;
+package jsv.unededucaanalisis.controladores;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
