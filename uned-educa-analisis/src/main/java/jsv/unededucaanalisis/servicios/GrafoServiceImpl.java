@@ -1,19 +1,15 @@
 package jsv.unededucaanalisis.servicios;
 
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import jsv.unededucaanalisis.modelo.Arista;
 import jsv.unededucaanalisis.modelo.Grafo;
 import jsv.unededucaanalisis.modelo.Persona;
-
 
 @Service("GrafoService")
 public class GrafoServiceImpl implements GrafoService {
@@ -32,14 +28,11 @@ public class GrafoServiceImpl implements GrafoService {
 		//Obtener aristas llamando a servicios de aristas.
 		grafo.setAristas(servicioAristas.findAll());
 		return grafo;
-
 	}
 
 	@Override
 	public int generarFichero(Grafo migrafo, String formato) throws IOException 
 	{
-
-
 		FileWriter fileWriter = new FileWriter(rutaFicheros + ficheroGrafo);
 	    PrintWriter printWriter = new PrintWriter(fileWriter);
 	    printWriter.println("Creator \"JUAN MANUEL SÁNCHEZ VILLAREJO\"");
@@ -59,7 +52,6 @@ public class GrafoServiceImpl implements GrafoService {
 		    printWriter.println("email \"" + nodo.getNombre()+ "\"");
 		    printWriter.println("]");
 	    }
-
 	    
 	    //Se escriben las aristas
 	    for (Arista arista : migrafo.getAristas()) 
@@ -75,11 +67,7 @@ public class GrafoServiceImpl implements GrafoService {
 	    printWriter.println("]");
 	    printWriter.close();
 		return 0;
-	}
-
-	
-	
-	
+	}	
 }
 
 

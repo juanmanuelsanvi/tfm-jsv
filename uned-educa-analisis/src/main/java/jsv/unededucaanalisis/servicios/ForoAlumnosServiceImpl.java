@@ -26,9 +26,9 @@ import jsv.unededucaanalisis.repositorios.ConvocatoriaRepository;
 @Service("ForoAlumnosService")
 public class ForoAlumnosServiceImpl implements ForoAlumnosService 
 {
-	@Value("${pfgamm.data.ficheroForo}")
+	@Value("${tfmjsv.data.ficheroForo}")
 	private String ficheroForo;
-	@Value("${pfgamm.data.rutaficheros}")
+	@Value("${tfmjsv.data.rutaficheros}")
 	private String rutaFicheros;
 	
 	@Autowired
