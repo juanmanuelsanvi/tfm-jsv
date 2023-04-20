@@ -1,7 +1,6 @@
 package jsv.unededucaanalisis.servicios;
 
 import java.io.IOException;
-import java.util.List;
 
 import jsv.unededucaanalisis.modelo.Asignatura;
 import jsv.unededucaanalisis.modelo.Convocatoria;

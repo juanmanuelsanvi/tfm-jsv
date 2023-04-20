@@ -5,11 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jsv.unededucaanalisis.modelo.Asignatura;
+//import jsv.unededucaanalisis.modelo.Asignatura;
+//import jsv.unededucaanalisis.modelo.Materia;
 import jsv.unededucaanalisis.modelo.Mensaje;
-import jsv.unededucaanalisis.modelo.Persona;
+//import jsv.unededucaanalisis.modelo.Persona;
 import jsv.unededucaanalisis.repositorios.MensajeRepository;
-import jsv.unededucaanalisis.repositorios.PersonaRepository;
+//import jsv.unededucaanalisis.repositorios.PersonaRepository;
 
 @Service("MensajeService")
 public class MensajeServiceImpl implements MensajeService {
@@ -34,7 +35,6 @@ public class MensajeServiceImpl implements MensajeService {
 		repositorio.deleteById(Id);
 	}	
 	
-	
 	@Override
 	public Mensaje findById(String Id) {
 		// TODO Auto-generated method stub
@@ -46,6 +46,4 @@ public class MensajeServiceImpl implements MensajeService {
 	{
 		return repositorio.findAll();
 	}
-
-	
 }

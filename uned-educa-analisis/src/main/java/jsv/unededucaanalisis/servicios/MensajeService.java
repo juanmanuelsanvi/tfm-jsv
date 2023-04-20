@@ -12,5 +12,4 @@ public interface MensajeService
 	public void delete(String Id);	
 	public Mensaje findById(String Id);
 	public List<Mensaje> findAll();
-
 }

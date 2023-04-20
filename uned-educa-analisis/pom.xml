@@ -71,7 +71,11 @@
 	    <artifactId>commons-csv</artifactId>
 	    <version>1.9.0</version>
 	</dependency>
-	
+	<dependency>
+	    <groupId>org.gephi</groupId>
+	    <artifactId>gephi-toolkit</artifactId>
+	    <version>0.10.1</version>
+	</dependency>	
 	</dependencies>
 
 	<build>

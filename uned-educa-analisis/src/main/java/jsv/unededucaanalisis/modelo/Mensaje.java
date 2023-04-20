@@ -53,7 +53,7 @@ public class Mensaje
 		this.idPersona = idPersona;
 		this.idMensajePadre = idMensajePadre;
 		this.titulo = titulo;
-		//this.contenidoMensaje = contenidoMensaje;
+		this.contenidoMensaje = contenidoMensaje;
 		this.numCaracteres = numCaracteres;
 		this.fechaEnvio = fechaEnvio;
 	}
@@ -135,6 +135,23 @@ public class Mensaje
 		return "Mensaje [id=" + id + ", idForo=" + idForo + ", idPersona=" + idPersona + ", idMensajePadre="
 				+ idMensajePadre + ", titulo=" + titulo + ", contenidoMensaje=" + contenidoMensaje + ", numCaracteres="
 				+ numCaracteres + ", fechaEnvio=" + fechaEnvio + ", fechaActualizacion=" + fechaActualizacion + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Mensaje other = (Mensaje) obj;
+		return Objects.equals(id, other.id);
 	}
 	
 }

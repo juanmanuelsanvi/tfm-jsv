@@ -10,6 +10,4 @@ import jsv.unededucaanalisis.modelo.Convocatoria;
 public interface ConvocatoriaRepository extends JpaRepository<Convocatoria, Integer> 
 {
 	Convocatoria findByConvocatoria(String convocatoria);
-	
-
 }

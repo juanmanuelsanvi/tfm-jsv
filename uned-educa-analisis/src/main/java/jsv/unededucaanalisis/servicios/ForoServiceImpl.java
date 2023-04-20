@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jsv.unededucaanalisis.modelo.Asignatura;
 import jsv.unededucaanalisis.modelo.Foro;
 import jsv.unededucaanalisis.repositorios.ForoRepository;
 
@@ -14,7 +13,7 @@ public class ForoServiceImpl implements ForoService {
 
 	@Autowired
 	private ForoRepository repositorio;
-	
+
 	@Override
 	public Foro add(Foro a) 
 	{

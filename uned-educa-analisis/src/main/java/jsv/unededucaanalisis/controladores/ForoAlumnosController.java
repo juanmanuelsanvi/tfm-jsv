@@ -11,18 +11,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import jsv.unededucaanalisis.modelo.Asignatura;
 import jsv.unededucaanalisis.modelo.Convocatoria;
-import jsv.unededucaanalisis.modelo.Grafo;
 import jsv.unededucaanalisis.modelo.InfoProcesoForo;
 import jsv.unededucaanalisis.modelo.Persona;
-import jsv.unededucaanalisis.servicios.AsignaturaService;
 import jsv.unededucaanalisis.servicios.ConvocatoriaService;
 import jsv.unededucaanalisis.servicios.ForoAlumnosService;
 import jsv.unededucaanalisis.servicios.PersonaService;
@@ -67,22 +62,20 @@ public class ForoAlumnosController
 	public String importarFichero(Model model, @RequestParam("fichero") MultipartFile file, @RequestParam("convocatoria") Integer id, @RequestParam("docente") Integer idPersona) throws IOException 
 	{
 		//TODO Desarrollar la recogida de convocatoria y profesor 
-	
-		
-        StringBuilder fileNames = new StringBuilder();
+		StringBuilder fileNames = new StringBuilder();
         // Se contruye la ruta y nombre del fichero
         Path fileNameAndPath = Paths.get(rutaFicheros, file.getOriginalFilename());
         fileNames.append(file.getOriginalFilename());
         Files.write(fileNameAndPath, file.getBytes());
-        model.addAttribute("mensaje", "Fichero subido: " + fileNames.toString());
-               
+        model.addAttribute("mensaje", "Fichero subido: " + fileNames.toString()); 
         InfoProcesoForo infoProceso=servicioForoAlumnos.procesaDatos(servicioConvocatoria.findById(id).getConvocatoria(), servicioPersona.findById(idPersona));	
-		
+	
 		model.addAttribute("numAsignaturas",infoProceso.getNumAsignaturas());
 		model.addAttribute("numForos",infoProceso.getNumForos());
 		model.addAttribute("numMensajes",infoProceso.getNumMensajes());
 		model.addAttribute("numPersonas",infoProceso.getNumPersonas());
-		model.addAttribute("numRegistrosProcesados",infoProceso.getNumRegistrosProcesados());		
+		model.addAttribute("numRegistrosProcesados",infoProceso.getNumRegistrosProcesados());	
+		
         return "resultadoImportacion";
     }	
 	

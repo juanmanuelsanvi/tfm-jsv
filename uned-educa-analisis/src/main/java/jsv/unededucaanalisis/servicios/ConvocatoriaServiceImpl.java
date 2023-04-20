@@ -37,8 +37,6 @@ public class ConvocatoriaServiceImpl implements ConvocatoriaService {
 		// TODO Auto-generated method stub
 		return repositorio.findById(Id).orElse(null);
 	}
-	
-	
 
 	@Override
 	public List<Convocatoria> findAll() 
@@ -50,7 +48,6 @@ public class ConvocatoriaServiceImpl implements ConvocatoriaService {
 	public Convocatoria findByConvocatoria(String convocatoria)
 	{
 		return repositorio.findByConvocatoria(convocatoria);
-		
 	}
 
 }

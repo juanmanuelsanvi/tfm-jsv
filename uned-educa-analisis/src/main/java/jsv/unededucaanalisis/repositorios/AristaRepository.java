@@ -5,8 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import jsv.unededucaanalisis.modelo.Arista;
 
-public interface AristaRepository 
-		extends JpaRepository<Arista, Integer> {
-	
+public interface AristaRepository extends JpaRepository<Arista, Integer> 
+{
 
 }
