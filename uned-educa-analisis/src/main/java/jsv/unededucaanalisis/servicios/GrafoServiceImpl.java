@@ -4,6 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.gephi.graph.api.GraphController;
+import org.gephi.project.api.ProjectController;
+import org.gephi.project.api.Workspace;
+import org.openide.util.Lookup;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -67,7 +71,27 @@ public class GrafoServiceImpl implements GrafoService {
 	    printWriter.println("]");
 	    printWriter.close();
 		return 0;
+	}
+
+	@Override
+	public void generarIndicadores(Grafo migrafo) throws IOException {
+		// TODO Auto-generated method stub
+		
+		// Inicio un proyecto y un espacio de trabajo
+		pc = Lookup.getDefault().lookup(ProjectController.class);
+		pc.newProject();
+
+		Workspace workspace = pc.getCurrentWorkspace();		
+		
+		// Creo un modelo grafo - existe porque tenemos el workspace
+		graphModel = Lookup.getDefault().lookup(GraphController.class).getGraphModel(workspace);
+		for (Persona nodo : migrafo.getNodos()) 
+	    {
+
+	    }
 	}	
+	
+	
 }
 
 

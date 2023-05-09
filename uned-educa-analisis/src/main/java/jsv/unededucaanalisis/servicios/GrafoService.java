@@ -12,5 +12,6 @@ public interface GrafoService
 {
 	public Grafo generarGrafo(PersonaService servicioPersonas, AristaService servicioAristas);
 	public int generarFichero(Grafo migrafo, String formato)  throws IOException;
+	public void generarIndicadores(Grafo migrafo) throws IOException;
 
 }

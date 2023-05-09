@@ -21,8 +21,7 @@ public class AsignaturaController
 	// Genera la lista de asignaturas
 	@GetMapping({"/asignatura","asignatura/list"})
 	public String listado(Model model)
-	{
-		
+	{		
 		model.addAttribute("listaAsignaturas",servicio.findAll());
 		return "listAsignatura";
 	}
