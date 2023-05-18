@@ -57,6 +57,47 @@
 					</tr>
 				</tbody>	
 			</table>
+			
+			<h2>Matriz de adyascencia</h2>			
+			<table class="table" >
+				<thead>
+					<tr >
+						<th> </th>
+					    <th th:each="elementoMatriz : ${listaNodos}" th:text = "${elementoMatriz.id}"> </th>
+					</tr>					
+				</thead>
+				<tbody>
+				  <tr  th:each="elementoMatriz : ${listaNodos}">
+				  	<td th:text = "${elementoMatriz.id}">	</td>
+				  </tr>				  
+				</tbody>
+			</table>
+			
+			<h2>Indicadores</h2>			
+			<table class="table" >
+				<thead>
+					<tr >
+						<th> </th>
+					    <th style="text-align: center"> Iniciativa </th>
+					    <th style="text-align: center"> Actividad </th>
+					    <th style="text-align: center"> Popularidad </th>
+					    <th style="text-align: center"> Cercanía (Closeness Centrality) </th>
+					    <th style="text-align: center"> Intermediación (Betweenness Centrality) </th>
+					    <th style="text-align: center"> Centralidad del vector propio(Eigenvector) </th>
+					    <th style="text-align: center"> Modularidad </th>
+					</tr>
+					
+				</thead>
+				<tbody>
+
+				  <tr  th:each="elementoMatriz : ${listaNodos}">
+				  	<td th:text = "${elementoMatriz.id}">				  	
+				  	</td>
+				  	
+				  </tr>
+				  
+				</tbody>
+			</table>
 		</div>
 	</div>
 	
