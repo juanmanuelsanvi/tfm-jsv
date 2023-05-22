@@ -13,5 +13,8 @@ public interface GrafoService
 	public Grafo generarGrafo(PersonaService servicioPersonas, AristaService servicioAristas);
 	public int generarFichero(Grafo migrafo, String formato)  throws IOException;
 	public void generarIndicadores(Grafo migrafo) throws IOException;
-
+	public List<Double> getBetweenesscentrality();
+	public List<Double> getClosnesscentrality();
+	public List<Double> getHarmonicclosnesscentrality();
+	public List<Double> getEccentricity();
 }

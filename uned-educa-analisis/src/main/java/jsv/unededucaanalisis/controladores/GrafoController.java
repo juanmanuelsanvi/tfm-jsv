@@ -47,6 +47,10 @@ public class GrafoController
 	{
 		List<Persona> listaNodos; 
 		List<Arista> listaAristas;
+		List<Double> listaBetweenessCentrality; 
+		List<Double> listaClosnessCentrality;
+		List<Double> listaHarmonicClosnessCentrality;
+		List<Double> listaEccentricity;
 		
 		Grafo miGrafo=servicioGrafo.generarGrafo(servicioPersona, servicioArista);	
 		servicioGrafo.generarFichero(miGrafo,"kk");
@@ -60,35 +64,21 @@ public class GrafoController
 		
 		listaNodos = miGrafo.getNodos();
 		listaAristas = miGrafo.getAristas();
-		
-		//String [][] matrizAdyascencia = new String[miGrafo.getNodos().size()+1][miGrafo.getNodos().size()+1];
-		/*
-        // Rellena cabecera horizontal
-        for(int i=1; i<  miGrafo.getAristas().size(); i++)
-        {
-        	matrizAdyascencia[0][i] = miGrafo.getNodos().get(i).toString();
-        }	
-        // Rellena cabecera vertical
-        for(int i=1; i<  miGrafo.getAristas().size(); i++)
-        {
-        	matrizAdyascencia[i][0] = miGrafo.getNodos().get(i).toString();
-        }        
-        
-		// Inicializa matriz en 0
-        for(int i=1; i<  miGrafo.getNodos().size()+1; i++)
-        {
-            for(int j=1; j<  miGrafo.getNodos().size()+1; j++)
-            {
-            	matrizAdyascencia[i][j] = "0";
-            }            
-        }
-		*/
+		listaBetweenessCentrality = servicioGrafo.getBetweenesscentrality();
+		listaClosnessCentrality = servicioGrafo.getClosnesscentrality();
+		listaHarmonicClosnessCentrality = servicioGrafo.getHarmonicclosnesscentrality();
+		listaEccentricity = servicioGrafo.getEccentricity();
 		
 		model.addAttribute("nodos",nodosGenerados);
 		model.addAttribute("aristas",aristasGeneradas);
 		model.addAttribute("fichero",rutaFicheroGrafo);	
 		// Crea un nuevo atributo con matriz de adyascencia jsv: 17-05-2023
-		model.addAttribute("listaNodos",listaNodos);
+		model.addAttribute("listaNodos", listaNodos);
+		model.addAttribute("betweenness", listaBetweenessCentrality);
+		model.addAttribute("closeness", listaClosnessCentrality);
+		model.addAttribute("harmonic", listaHarmonicClosnessCentrality);
+		model.addAttribute("eccentricity", listaEccentricity);
+		
 		return "grafoGenerado";
 	}
 	
