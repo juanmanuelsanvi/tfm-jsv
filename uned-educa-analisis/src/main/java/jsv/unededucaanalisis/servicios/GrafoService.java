@@ -1,12 +1,8 @@
 package jsv.unededucaanalisis.servicios;
 
 import java.util.List;
-
 import java.io.IOException;
-
 import jsv.unededucaanalisis.modelo.Grafo;
-import jsv.unededucaanalisis.servicios.AristaService;
-import jsv.unededucaanalisis.servicios.PersonaService;
 
 public interface GrafoService 
 {

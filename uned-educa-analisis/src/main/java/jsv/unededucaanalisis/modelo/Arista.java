@@ -6,9 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.gephi.graph.api.Edge;
-import org.gephi.graph.api.Node;
-
 @Entity
 @Table(name = "vAristas")
 public class Arista 

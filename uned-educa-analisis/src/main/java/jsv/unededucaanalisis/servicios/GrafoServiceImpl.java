@@ -3,7 +3,6 @@ package jsv.unededucaanalisis.servicios;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import org.gephi.project.api.ProjectController;
@@ -11,18 +10,10 @@ import org.gephi.project.api.Workspace;
 import org.openide.util.Lookup;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import com.mysql.cj.x.protobuf.MysqlxPrepare.Execute;
 import jsv.unededucaanalisis.modelo.Arista;
 import jsv.unededucaanalisis.modelo.Grafo;
 import jsv.unededucaanalisis.modelo.Persona;
-//import jsv.unededucaanalisis.servicios.GraphDistance;
-import org.gephi.project.api.Project;
-import org.gephi.project.api.ProjectController;
-import org.gephi.project.api.Workspace;
-import org.gephi.statistics.*;
 import org.gephi.statistics.plugin.GraphDistance;
-import org.gephi.datalab.*;
-
 import org.gephi.graph.api.*;
 
 @Service("GrafoService")
@@ -60,7 +51,7 @@ public class GrafoServiceImpl implements GrafoService {
 		return closnesscentrality;
 	}
 
-	public void setClosnesscentrality(List<Double> closnesscentrality) {
+	public void setClosnesscentrality(Column closnesscentrality) {
 		for (Node n : directedGraph.getNodes()) {
 			this.closnesscentrality.add( (Double)n.getAttribute("closnesscentrality"));
 		}
@@ -70,7 +61,7 @@ public class GrafoServiceImpl implements GrafoService {
 		return harmonicclosnesscentrality;
 	}
 
-	public void setHarmonicclosnesscentrality(List<Double> harmonicclosnesscentrality) {
+	public void setHarmonicclosnesscentrality(Column harmonicclosnesscentrality) {
 		for (Node n : directedGraph.getNodes()) {
 			this.harmonicclosnesscentrality.add( (Double)n.getAttribute("harmonicclosnesscentrality"));
 		}
@@ -80,7 +71,7 @@ public class GrafoServiceImpl implements GrafoService {
 		return eccentricity;
 	}
 
-	public void setEccentricity(List<Double> eccentricity) {
+	public void setEccentricity(Column eccentricity) {
 		for (Node n : directedGraph.getNodes()) {
 			this.eccentricity.add( (Double)n.getAttribute("eccentricity"));
 		}
@@ -147,23 +138,21 @@ public class GrafoServiceImpl implements GrafoService {
 		
 		// Primero: transformo grafo de Alfonso a grafo Gephi
 		transformaGrafoGephi(migrafo);
-
-		// Añadimos a nuestra tabla de valores 4 columnas de indicadores
-		// betweenesscentrality
-		// closnesscentrality
-		// harmonicclosnesscentrality
-		// eccentricity
-		
+	
 		graphDistance = new GraphDistance();
 		graphDistance.setDirected(true);		
 		graphDistance.execute(graphModel);
 		
-		// Obtiene los 4 indicadores
+		// Almaceno en listas individuales los 4 indicadores
+		//Por implementar
+		//setIniciativa();
+		//setActividad();
+		//setPopularidad();
 		setBetweenesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.BETWEENNESS));
-		setBetweenesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.CLOSENESS));
-		setBetweenesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.HARMONIC_CLOSENESS));
-		setBetweenesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.ECCENTRICITY));
-			
+		setClosnesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.CLOSENESS));
+		setHarmonicclosnesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.HARMONIC_CLOSENESS));
+		setEccentricity(graphModel.getNodeTable().getColumn(GraphDistance.ECCENTRICITY));
+		
 	}	
 	
 	

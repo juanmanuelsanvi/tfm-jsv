@@ -58,19 +58,12 @@
 				</tbody>	
 			</table>
 			
-			<h2>Matriz de adyascencia</h2>			
+			<h2>Matriz de adyacencia</h2>			
 			<table class="table" >
-				<thead>
-					<tr >
-						<th> </th>
-					    <th th:each="elementoMatriz : ${listaNodos}" th:text = "${elementoMatriz.id}"> </th>
-					</tr>					
-				</thead>
-				<tbody>
-				  <tr  th:each="elementoMatriz : ${listaNodos}">
-				  	<td th:text = "${elementoMatriz.id}">	</td>
-				  </tr>				  
-				</tbody>
+				<thead>				
+					<tr th:each="fila: ${matriz}">
+        				<td th:each="valor: ${fila}" th:text="${valor}" />
+					</tr>
 			</table>
 			
 			<h2>Indicadores</h2>			
@@ -88,19 +81,14 @@
 					</tr>					
 				</thead>
 				<tbody>
-				  <tr  th:each="elementoMatriz : ${listaNodos}" >
-				  	<td th:text = "${elementoMatriz.id}" >				  	
-				  	</td>
-				  	<td>
-				  	</td>
-				  	<td>
-				  	</td>
-				  	<td>
-				  	</td>
-				  	<td th:text = "${closeness}">
-				  	</td>
-				  	<td th:text = "${betweenness}">
-				  	</td>
+				  <tr th:each = "indicador : ${listaIndicadores}">
+				  	<td th:text = "${indicador.id}"> </td>
+				  	<td> 	</td>
+				  	<td> 	</td>
+				  	<td> 	</td>
+				  	<td th:text="${indicador.closeness}"> </td>
+				  	<td th:text="${indicador.betweenness}"> </td>
+				  	
 				  </tr>
 				  
 				</tbody>
