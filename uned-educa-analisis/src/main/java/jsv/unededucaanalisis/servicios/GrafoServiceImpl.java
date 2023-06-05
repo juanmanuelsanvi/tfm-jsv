@@ -14,6 +14,7 @@ import jsv.unededucaanalisis.modelo.Arista;
 import jsv.unededucaanalisis.modelo.Grafo;
 import jsv.unededucaanalisis.modelo.Persona;
 import org.gephi.statistics.plugin.GraphDistance;
+import org.gephi.statistics.plugin.EigenvectorCentrality;
 import org.gephi.graph.api.*;
 
 @Service("GrafoService")
@@ -28,15 +29,36 @@ public class GrafoServiceImpl implements GrafoService {
 	private GraphModel graphModel;
 	private DirectedGraph directedGraph;
 	private GraphDistance graphDistance;
+	//private EigenvectorCentrality eigen;
 	
 	private Node n;
 	private Edge e;
 	
+	private List<Integer> iniciativa;
+	private List<Integer> actividad;
 	private List<Double> betweenesscentrality;
 	private List<Double> closnesscentrality;
-	private List<Double> harmonicclosnesscentrality;
-	private List<Double> eccentricity;
+	//private List<Double> harmonicclosnesscentrality;
+	//private List<Double> eccentricity;
+	//private List<Double> eigenvector;
 	
+
+	public List<Integer> getIniciativa() {
+		return iniciativa;
+	}
+
+	public void setIniciativa(List<Integer> iniciativa) {
+		this.iniciativa = iniciativa;
+	}
+
+	public List<Integer> getActividad() {
+		return actividad;
+	}
+
+	public void setActividad(List<Integer> actividad) {
+		this.actividad = actividad;
+	}
+
 	public List<Double> getBetweenesscentrality() {
 		return betweenesscentrality;
 	}
@@ -56,8 +78,8 @@ public class GrafoServiceImpl implements GrafoService {
 			this.closnesscentrality.add( (Double)n.getAttribute("closnesscentrality"));
 		}
 	}
-
-	public List<Double> getHarmonicclosnesscentrality() {
+	
+	/*public List<Double> getHarmonicclosnesscentrality() {
 		return harmonicclosnesscentrality;
 	}
 
@@ -65,9 +87,9 @@ public class GrafoServiceImpl implements GrafoService {
 		for (Node n : directedGraph.getNodes()) {
 			this.harmonicclosnesscentrality.add( (Double)n.getAttribute("harmonicclosnesscentrality"));
 		}
-	}
+	}*/
 
-	public List<Double> getEccentricity() {
+	/*public List<Double> getEccentricity() {
 		return eccentricity;
 	}
 
@@ -75,8 +97,19 @@ public class GrafoServiceImpl implements GrafoService {
 		for (Node n : directedGraph.getNodes()) {
 			this.eccentricity.add( (Double)n.getAttribute("eccentricity"));
 		}
+	}*/
+	/*
+	public List<Double> getEigenvector() {
+		return eigenvector;
 	}
 
+	public void setEigenvector(ArrayList<Double> eigenvector) {
+		for (Node n : directedGraph.getNodes()) {
+			this.eigenvector.add( (Double)n.getAttribute("eigenvector"));
+		}
+	}
+	*/
+	
 	@Override
 	public Grafo generarGrafo(PersonaService servicioPersonas, AristaService servicioAristas) 
 	{
@@ -130,11 +163,16 @@ public class GrafoServiceImpl implements GrafoService {
 	@Override
 	public void generarIndicadores(Grafo migrafo) throws IOException {
 		// TODO Auto-generated method stub
-
+		
+		iniciativa = new ArrayList<Integer>();
+		actividad = new ArrayList<Integer>();
+		
 		betweenesscentrality = new ArrayList<Double>();
 		closnesscentrality = new ArrayList<Double>();
-		harmonicclosnesscentrality = new ArrayList<Double>();
-		eccentricity = new ArrayList<Double>();		
+		//eigenvector = new ArrayList<Double>();
+		
+		//harmonicclosnesscentrality = new ArrayList<Double>();
+		//eccentricity = new ArrayList<Double>();		
 		
 		// Primero: transformo grafo de Alfonso a grafo Gephi
 		transformaGrafoGephi(migrafo);
@@ -143,16 +181,15 @@ public class GrafoServiceImpl implements GrafoService {
 		graphDistance.setDirected(true);		
 		graphDistance.execute(graphModel);
 		
-		// Almaceno en listas individuales los 4 indicadores
-		//Por implementar
-		//setIniciativa();
-		//setActividad();
-		//setPopularidad();
+		//eigen = new EigenvectorCentrality();
+		//eigen.execute(directedGraph);
+		
+		// Almaceno en listas individuales los 2 indicadores
 		setBetweenesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.BETWEENNESS));
 		setClosnesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.CLOSENESS));
-		setHarmonicclosnesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.HARMONIC_CLOSENESS));
-		setEccentricity(graphModel.getNodeTable().getColumn(GraphDistance.ECCENTRICITY));
-		
+		//setHarmonicclosnesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.HARMONIC_CLOSENESS));
+		//setEccentricity(graphModel.getNodeTable().getColumn(GraphDistance.ECCENTRICITY));
+		//setEigenvector(graphModel.getNodeTable().getColumn(eigen.EIGENVECTOR));
 	}	
 	
 	
@@ -192,11 +229,14 @@ public class GrafoServiceImpl implements GrafoService {
 			n.setAttribute("nombre", nodo.getNombre());
 			n.setAttribute("email", nodo.getEmail());
 			n.setAttribute("fecha", nodo.getFechaActualizacion().toString());
+			iniciativa.add(0);
+			actividad.add(0);
 	    }
 		
 		// Recorre las aristas de migrafo y las añade al nuevo grafo de gephi
 		for ( Arista arista : migrafo.getAristas()) 
 		{ 
+			int contador;
 			e = graphModel.factory().newEdge(directedGraph.getNode( arista.getSource().toString()),
 											 directedGraph.getNode( arista.getTarget().toString()), 
 											 0, 1.0, true);
@@ -205,6 +245,23 @@ public class GrafoServiceImpl implements GrafoService {
 			e.setAttribute("asignatura", arista.getAsignatura());
 			e.setAttribute("numcaracteres", arista.getNumcaracteres());
 			e.setAttribute("fechaEnvio", arista.getFechaEnvio());
+			
+			contador = 0;
+			// Recorre los nodos de migrafo 
+			for ( Persona nodo : migrafo.getNodos()) 
+			{		
+				if(arista.getTarget().toString() == "") {
+					// Para buscar la posición del nodo que inicia un mensaje
+					if (nodo.getId() == arista.getSource()) {
+						iniciativa.set(contador, iniciativa.get(contador)+1);
+					}
+			    }
+				// Para buscar la posición del nodo que escribe mensaje e incrementar su actividad
+				if (nodo.getId() == arista.getSource()) {
+					actividad.set(contador, actividad.get(contador)+1);
+				}
+				contador = contador + 1;
+			}			
 		}		
 	}
 	

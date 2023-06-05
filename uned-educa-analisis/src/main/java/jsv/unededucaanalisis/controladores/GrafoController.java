@@ -47,12 +47,14 @@ public class GrafoController
 		
 		List<Persona> listaNodos; 
 		List<Arista> listaAristas;
-		
+		List<Integer> listaIniciativa;
+		List<Integer> listaActividad;
 		List<Double> listaBetweenessCentrality; 
 		List<Double> listaClosnessCentrality;
 		//List<Double> listaHarmonicClosnessCentrality;
 		//List<Double> listaEccentricity;
-
+		//List<Double> listaEigenvectorCentrality;
+		
 		Integer[][] matrizAdyacencia = null;
 		List<Indicador> lista;
 		Indicador indicador;		
@@ -73,8 +75,12 @@ public class GrafoController
 		listaNodos = miGrafo.getNodos();
 		listaAristas = miGrafo.getAristas();
 
+		listaIniciativa = servicioGrafo.getIniciativa();
+		listaActividad = servicioGrafo.getActividad();
 		listaBetweenessCentrality = servicioGrafo.getBetweenesscentrality();
 		listaClosnessCentrality = servicioGrafo.getClosnesscentrality();
+		//listaEigenvectorCentrality = servicioGrafo.getEigenvector();
+		
 		//listaHarmonicClosnessCentrality = servicioGrafo.getHarmonicclosnesscentrality();
 		//listaEccentricity = servicioGrafo.getEccentricity();
 		fila = col = 0;
@@ -126,9 +132,14 @@ public class GrafoController
 			
 		for(int i=0; i < listaNodos.size(); i++) {
 			indicador = new Indicador();
+			indicador.setIniciativa(listaIniciativa.get(i));
+			indicador.setActividad(listaActividad.get(i));
 			indicador.setId(listaNodos.get(i).getId());
 			indicador.setBetweenness(listaBetweenessCentrality.get(i));
 			indicador.setCloseness(listaClosnessCentrality.get(i));
+			//indicador.setEigenvector(listaEigenvectorCentrality.get(i));
+			//indicador.setHarmonic(listaHarmonicClosnessCentrality.get(i));
+			//indicador.setEccentricity(listaEccentricity.get(i));
 			lista.add(indicador);
 		}
 		

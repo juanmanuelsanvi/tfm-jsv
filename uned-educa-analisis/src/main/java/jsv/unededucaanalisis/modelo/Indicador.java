@@ -7,13 +7,33 @@ public class Indicador {
 	private Integer popularidad;
 	private Double closeness;
 	private Double betweenness;
-	private Double centralidad;
+	//private Double harmonic;
+	//private Double eccentricity;
+	private Double eigenvector;
+	private Double modularidad;
+	
+	/*public Double getHarmonic() {
+		return harmonic;
+	}
+
+	public void setHarmonic(Double harmonic) {
+		this.harmonic = harmonic;
+	}*/
+
+	/*public Double getEccentricity() {
+		return eccentricity;
+	}
+
+	public void setEccentricity(Double eccentricity) {
+		this.eccentricity = eccentricity;
+	}*/
+
 	
 	@Override
 	public String toString() {
 		return "Indicador [id=" + id + ", iniciativa=" + iniciativa + ", actividad=" + actividad + ", popularidad="
-				+ popularidad + ", closeness=" + closeness + ", betweenness=" + betweenness + ", centralidad="
-				+ centralidad + ", modularidad=" + modularidad + "]";
+				+ popularidad + ", closeness=" + closeness + ", betweenness=" + betweenness + ", eigenvector="
+				+ eigenvector + ", modularidad=" + modularidad + "]";
 	}
 	
 	public Integer getId() {
@@ -52,18 +72,19 @@ public class Indicador {
 	public void setBetweenness(Double betweenness) {
 		this.betweenness = betweenness;
 	}
-	public Double getCentralidad() {
-		return centralidad;
+	public Double getEigenvector() {
+		return eigenvector;
 	}
-	public void setCentralidad(Double centralidad) {
-		this.centralidad = centralidad;
+
+	public void setEigenvector(Double eigenvector) {
+		this.eigenvector = eigenvector;
 	}
+
 	public Double getModularidad() {
 		return modularidad;
 	}
 	public void setModularidad(Double modularidad) {
 		this.modularidad = modularidad;
 	}
-	private Double modularidad;
 	
 }

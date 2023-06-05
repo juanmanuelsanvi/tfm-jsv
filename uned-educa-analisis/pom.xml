@@ -14,7 +14,7 @@
 	<name>uned-educa-analisis</name>
 	<description>Aplicación para la realización de minería de datos sobre datos educativos de la UNED</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>1.11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -51,7 +51,7 @@
 		<dependency>
 		    <groupId>org.gephi</groupId>
 		    <artifactId>gephi-toolkit</artifactId>
-		    <version>0.9.3</version>
+		    <version>0.10.1</version>
 		</dependency>	
 		<dependency>
     		<groupId>org.gephi</groupId>

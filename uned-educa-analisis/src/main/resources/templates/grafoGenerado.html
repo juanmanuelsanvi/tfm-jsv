@@ -83,11 +83,12 @@
 				<tbody>
 				  <tr th:each = "indicador : ${listaIndicadores}">
 				  	<td th:text = "${indicador.id}"> </td>
-				  	<td> 	</td>
-				  	<td> 	</td>
+				  	<td th:text = "${indicador.iniciativa}"> 	</td>
+				  	<td th:text = "${indicador.actividad}"> 	</td>
 				  	<td> 	</td>
 				  	<td th:text="${indicador.closeness}"> </td>
 				  	<td th:text="${indicador.betweenness}"> </td>
+				  	<td> </td>
 				  	
 				  </tr>
 				  
