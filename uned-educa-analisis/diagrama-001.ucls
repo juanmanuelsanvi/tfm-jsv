@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="jsv.unededucaanalisis.modelo.Arista" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Arista.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="840" y="682"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="jsv.unededucaanalisis.modelo.Asignatura" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Asignatura.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="322" width="234" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="jsv.unededucaanalisis.modelo.Convocatoria" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Convocatoria.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="434" y="673"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="jsv.unededucaanalisis.modelo.Materia" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Materia.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="161" y="602"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="jsv.unededucaanalisis.modelo.Foro" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Foro.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="448" width="256" x="315" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="jsv.unededucaanalisis.modelo.Indicador" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Indicador.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="538" width="196" x="1428" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="jsv.unededucaanalisis.modelo.InfoProcesoForo" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/InfoProcesoForo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="358" width="263" x="1125" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="jsv.unededucaanalisis.modelo.Mensaje" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Mensaje.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="646" width="395" x="1664" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="jsv.unededucaanalisis.modelo.Persona" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Persona.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1167" y="671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="jsv.unededucaanalisis.modelo.Grafo" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/modelo/Grafo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="214" width="200" x="885" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="jsv.unededucaanalisis.servicios.GrafoServiceImpl" project="uned-educa-analisis" 
+    file="/uned-educa-analisis/src/main/java/jsv/unededucaanalisis/servicios/GrafoServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1646" y="1167"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="12">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="13" name="nodos"/>      
+      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="15">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="16" name="aristas"/>      
+      <multiplicity id="17" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
