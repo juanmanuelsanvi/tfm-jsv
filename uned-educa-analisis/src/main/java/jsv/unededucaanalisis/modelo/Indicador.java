@@ -10,7 +10,7 @@ public class Indicador {
 	//private Double harmonic;
 	//private Double eccentricity;
 	private Double eigenvector;
-	private Double modularidad;
+	private Integer modularidad;
 	
 	/*public Double getHarmonic() {
 		return harmonic;
@@ -39,39 +39,51 @@ public class Indicador {
 	public Integer getId() {
 		return id;
 	}
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
 	public Integer getIniciativa() {
 		return iniciativa;
 	}
+	
 	public void setIniciativa(Integer iniciativa) {
 		this.iniciativa = iniciativa;
 	}
+	
 	public Integer getActividad() {
 		return actividad;
 	}
+	
 	public void setActividad(Integer actividad) {
 		this.actividad = actividad;
 	}
+	
 	public Integer getPopularidad() {
 		return popularidad;
 	}
+	
 	public void setPopularidad(Integer popularidad) {
 		this.popularidad = popularidad;
 	}
+	
 	public Double getCloseness() {
 		return closeness;
 	}
+	
 	public void setCloseness(Double closeness) {
 		this.closeness = closeness;
 	}
+	
 	public Double getBetweenness() {
 		return betweenness;
 	}
+	
 	public void setBetweenness(Double betweenness) {
 		this.betweenness = betweenness;
 	}
+	
 	public Double getEigenvector() {
 		return eigenvector;
 	}
@@ -80,10 +92,11 @@ public class Indicador {
 		this.eigenvector = eigenvector;
 	}
 
-	public Double getModularidad() {
+	public Integer getModularidad() {
 		return modularidad;
 	}
-	public void setModularidad(Double modularidad) {
+	
+	public void setModularidad(Integer modularidad) {
 		this.modularidad = modularidad;
 	}
 	

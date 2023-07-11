@@ -15,6 +15,7 @@ import jsv.unededucaanalisis.modelo.Grafo;
 import jsv.unededucaanalisis.modelo.Persona;
 import org.gephi.statistics.plugin.GraphDistance;
 import org.gephi.statistics.plugin.EigenvectorCentrality;
+import org.gephi.statistics.plugin.Modularity;
 import org.gephi.graph.api.*;
 
 @Service("GrafoService")
@@ -29,19 +30,21 @@ public class GrafoServiceImpl implements GrafoService {
 	private GraphModel graphModel;
 	private DirectedGraph directedGraph;
 	private GraphDistance graphDistance;
-	//private EigenvectorCentrality eigen;
+	private EigenvectorCentrality eigen;
+	private Modularity modular;
 	
 	private Node n;
 	private Edge e;
 	
 	private List<Integer> iniciativa;
 	private List<Integer> actividad;
+	private List<Integer> popularidad;
 	private List<Double> betweenesscentrality;
 	private List<Double> closnesscentrality;
 	//private List<Double> harmonicclosnesscentrality;
 	//private List<Double> eccentricity;
-	//private List<Double> eigenvector;
-	
+	private List<Double> eigencentralityList;
+	private List<Integer> modularityList;
 
 	public List<Integer> getIniciativa() {
 		return iniciativa;
@@ -55,9 +58,17 @@ public class GrafoServiceImpl implements GrafoService {
 		return actividad;
 	}
 
+	public void setPopularidad(List<Integer> popularidad) {
+		this.popularidad = popularidad;
+	}
+	
+	public List<Integer> getPopularidad() {
+		return popularidad;
+	}
+
 	public void setActividad(List<Integer> actividad) {
 		this.actividad = actividad;
-	}
+	}	
 
 	public List<Double> getBetweenesscentrality() {
 		return betweenesscentrality;
@@ -76,6 +87,26 @@ public class GrafoServiceImpl implements GrafoService {
 	public void setClosnesscentrality(Column closnesscentrality) {
 		for (Node n : directedGraph.getNodes()) {
 			this.closnesscentrality.add( (Double)n.getAttribute("closnesscentrality"));
+		}
+	}
+
+	public List<Double> getEigenvector() {
+		return eigencentralityList;
+	}
+
+	public void setEigenvector(Column eigenvector) {
+		for (Node n : directedGraph.getNodes()) {
+			this.eigencentralityList.add( (Double)n.getAttribute("eigencentrality"));
+		}
+	}	
+	
+	public List<Integer> getModularity() {
+		return modularityList;
+	}
+
+	public void setModularity(Column modularity) {
+		for (Node n : directedGraph.getNodes()) {
+			this.modularityList.add( (Integer)n.getAttribute("modularity_class"));			
 		}
 	}
 	
@@ -98,17 +129,7 @@ public class GrafoServiceImpl implements GrafoService {
 			this.eccentricity.add( (Double)n.getAttribute("eccentricity"));
 		}
 	}*/
-	/*
-	public List<Double> getEigenvector() {
-		return eigenvector;
-	}
-
-	public void setEigenvector(ArrayList<Double> eigenvector) {
-		for (Node n : directedGraph.getNodes()) {
-			this.eigenvector.add( (Double)n.getAttribute("eigenvector"));
-		}
-	}
-	*/
+	
 	
 	@Override
 	public Grafo generarGrafo(PersonaService servicioPersonas, AristaService servicioAristas) 
@@ -131,7 +152,6 @@ public class GrafoServiceImpl implements GrafoService {
 	    printWriter.println("[");
 	    
 	    //Se escriben los nodos
-
 	    for (Persona nodo : migrafo.getNodos()) 
 	    {
 		    printWriter.println("node");	    	
@@ -166,10 +186,11 @@ public class GrafoServiceImpl implements GrafoService {
 		
 		iniciativa = new ArrayList<Integer>();
 		actividad = new ArrayList<Integer>();
-		
+		popularidad = new ArrayList<Integer>();
 		betweenesscentrality = new ArrayList<Double>();
 		closnesscentrality = new ArrayList<Double>();
-		//eigenvector = new ArrayList<Double>();
+		eigencentralityList = new ArrayList<Double>();
+		modularityList = new ArrayList<Integer>();
 		
 		//harmonicclosnesscentrality = new ArrayList<Double>();
 		//eccentricity = new ArrayList<Double>();		
@@ -178,18 +199,27 @@ public class GrafoServiceImpl implements GrafoService {
 		transformaGrafoGephi(migrafo);
 	
 		graphDistance = new GraphDistance();
-		graphDistance.setDirected(true);		
+		graphDistance.setDirected(true);	
+		
+		// Calculo los diferentes indicadores:
+		// 1. Betweeness y Closeness
 		graphDistance.execute(graphModel);
 		
-		//eigen = new EigenvectorCentrality();
-		//eigen.execute(directedGraph);
+		// 2. Eigenvector
+		eigen = new EigenvectorCentrality();
+		eigen.execute(directedGraph);
 		
-		// Almaceno en listas individuales los 2 indicadores
+		// 3. Modularidad
+		modular = new Modularity();
+		modular.execute(directedGraph);
+		
+		// Almaceno en listas individuales los 3 indicadores
 		setBetweenesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.BETWEENNESS));
 		setClosnesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.CLOSENESS));
+		setEigenvector(graphModel.getNodeTable().getColumn(EigenvectorCentrality.EIGENVECTOR));
+		setModularity(graphModel.getNodeTable().getColumn(Modularity.MODULARITY_CLASS));
 		//setHarmonicclosnesscentrality(graphModel.getNodeTable().getColumn(GraphDistance.HARMONIC_CLOSENESS));
 		//setEccentricity(graphModel.getNodeTable().getColumn(GraphDistance.ECCENTRICITY));
-		//setEigenvector(graphModel.getNodeTable().getColumn(eigen.EIGENVECTOR));
 	}	
 	
 	
@@ -231,6 +261,7 @@ public class GrafoServiceImpl implements GrafoService {
 			n.setAttribute("fecha", nodo.getFechaActualizacion().toString());
 			iniciativa.add(0);
 			actividad.add(0);
+			popularidad.add(0);
 	    }
 		
 		// Recorre las aristas de migrafo y las añade al nuevo grafo de gephi
@@ -249,7 +280,8 @@ public class GrafoServiceImpl implements GrafoService {
 			contador = 0;
 			// Recorre los nodos de migrafo 
 			for ( Persona nodo : migrafo.getNodos()) 
-			{		
+			{	
+				// Si el nodo inicia el mensaje lo guarda como iniciativa
 				if(arista.getTarget().toString() == "") {
 					// Para buscar la posición del nodo que inicia un mensaje
 					if (nodo.getId() == arista.getSource()) {
@@ -260,6 +292,11 @@ public class GrafoServiceImpl implements GrafoService {
 				if (nodo.getId() == arista.getSource()) {
 					actividad.set(contador, actividad.get(contador)+1);
 				}
+				// Para buscar la posición del nodo que escribe mensaje e incrementar su actividad
+				if (nodo.getId() == arista.getTarget()) {
+					popularidad.set(contador, popularidad.get(contador)+1);
+				}
+				
 				contador = contador + 1;
 			}			
 		}		

@@ -49,11 +49,13 @@ public class GrafoController
 		List<Arista> listaAristas;
 		List<Integer> listaIniciativa;
 		List<Integer> listaActividad;
+		List<Integer> listaPopularidad;
 		List<Double> listaBetweenessCentrality; 
 		List<Double> listaClosnessCentrality;
 		//List<Double> listaHarmonicClosnessCentrality;
 		//List<Double> listaEccentricity;
-		//List<Double> listaEigenvectorCentrality;
+		List<Double> listaEigenvectorCentrality;
+		List<Integer> listaModularidad;
 		
 		Integer[][] matrizAdyacencia = null;
 		List<Indicador> lista;
@@ -77,9 +79,11 @@ public class GrafoController
 
 		listaIniciativa = servicioGrafo.getIniciativa();
 		listaActividad = servicioGrafo.getActividad();
+		listaPopularidad = servicioGrafo.getPopularidad();
 		listaBetweenessCentrality = servicioGrafo.getBetweenesscentrality();
 		listaClosnessCentrality = servicioGrafo.getClosnesscentrality();
-		//listaEigenvectorCentrality = servicioGrafo.getEigenvector();
+		listaEigenvectorCentrality = servicioGrafo.getEigenvector();
+		listaModularidad = servicioGrafo.getModularity();
 		
 		//listaHarmonicClosnessCentrality = servicioGrafo.getHarmonicclosnesscentrality();
 		//listaEccentricity = servicioGrafo.getEccentricity();
@@ -111,21 +115,17 @@ public class GrafoController
 		for(int i = 0; i < listaAristas.size(); i++) 
 		{			
 			source = listaAristas.get(i).getSource();
-			System.out.println("source: " + source);
 			target = listaAristas.get(i).getTarget();
-			System.out.println("target: " + target);
 			fila = 0;
 			col = 0;
 			for(int j = 1; j < listaNodos.size()+1; j++)
 				if(source == matrizAdyacencia[j][0]) {
 					fila = j ;
-					System.out.println("Fila: " + fila);
 				}
 
 			for(int j = 1; j < listaNodos.size()+1; j++)
 				if(target == matrizAdyacencia[0][j]) {
 					col = j;
-					System.out.println("Columna: " + col);
 				}
 			matrizAdyacencia[fila][col] = matrizAdyacencia[fila][col] + 1;
 		}
@@ -134,10 +134,12 @@ public class GrafoController
 			indicador = new Indicador();
 			indicador.setIniciativa(listaIniciativa.get(i));
 			indicador.setActividad(listaActividad.get(i));
+			indicador.setPopularidad(listaPopularidad.get(i));
 			indicador.setId(listaNodos.get(i).getId());
 			indicador.setBetweenness(listaBetweenessCentrality.get(i));
 			indicador.setCloseness(listaClosnessCentrality.get(i));
-			//indicador.setEigenvector(listaEigenvectorCentrality.get(i));
+			indicador.setEigenvector(listaEigenvectorCentrality.get(i));
+			indicador.setModularidad(listaModularidad.get(i));
 			//indicador.setHarmonic(listaHarmonicClosnessCentrality.get(i));
 			//indicador.setEccentricity(listaEccentricity.get(i));
 			lista.add(indicador);

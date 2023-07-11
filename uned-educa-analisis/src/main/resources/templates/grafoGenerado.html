@@ -82,14 +82,14 @@
 				</thead>
 				<tbody>
 				  <tr th:each = "indicador : ${listaIndicadores}">
-				  	<td th:text = "${indicador.id}"> </td>
-				  	<td th:text = "${indicador.iniciativa}"> 	</td>
-				  	<td th:text = "${indicador.actividad}"> 	</td>
-				  	<td> 	</td>
-				  	<td th:text="${indicador.closeness}"> </td>
-				  	<td th:text="${indicador.betweenness}"> </td>
-				  	<td> </td>
-				  	
+				  	<td style="text-align: center" th:text = "${indicador.id}"> 	</td>
+				  	<td style="text-align: center" th:text = "${indicador.iniciativa}"> 	</td>
+				  	<td style="text-align: center" th:text = "${indicador.actividad}"> 	</td>
+				  	<td style="text-align: center" th:text = "${indicador.popularidad}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.closeness}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.betweenness}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.eigenvector}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.modularidad}"> 	</td>
 				  </tr>
 				  
 				</tbody>

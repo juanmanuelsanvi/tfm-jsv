@@ -44,8 +44,7 @@ public class Persona
 	{
 		
 	}
-	
-	
+		
 	public Integer getId() {
 		return id;
 	}
@@ -90,18 +89,11 @@ public class Persona
 		this.usuario = usuario;
 	}
 	
-
-
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", usuario=" + usuario + ", apellidos=" + apellidos + ", nombre=" + nombre
 				+ ", email=" + email + ", fechaActualizacion=" + fechaActualizacion + "]";
 	}
-
-
-
-
-
 	
 }
 

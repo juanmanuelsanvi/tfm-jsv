@@ -11,9 +11,11 @@ public interface GrafoService
 	public void generarIndicadores(Grafo migrafo) throws IOException;
 	public List<Integer> getIniciativa();
 	public List<Integer> getActividad();
+	public List<Integer> getPopularidad();
 	public List<Double> getBetweenesscentrality();
 	public List<Double> getClosnesscentrality();
-	//public List<Double> getEigenvector();
+	public List<Double> getEigenvector();
+	public List<Integer> getModularity();
 	//public List<Double> getHarmonicclosnesscentrality();
 	//public List<Double> getEccentricity();
 	
