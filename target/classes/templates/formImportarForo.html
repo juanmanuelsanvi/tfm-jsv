@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Starter Template for Bootstrap</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/css/starter-template.css" rel="stylesheet">
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+	<!-- Incorporo el menú de navegación de la página principal -->
+	<nav th:insert="index.html :: nav">	</nav>
+
+	<div class="container">
+
+		<div class="starter-template">
+
+			<div class="row">
+	            <div class="col-md-8 mx-auto">
+	                <h2>Importación de datos</h2>
+	                
+	                <p th:text="${mensaje}" th:if="${message ne null}" class="alert alert-primary"></p>
+	                <form method="post" th:action="@{/importar}" enctype="multipart/form-data">
+					
+						<label>Selecciona convocatoria</label>			
+						<select class="form-control" name="convocatoria" id="dropOperator">
+						    <option th:each="convocatoria : ${convocatorias}" th:value="${convocatoria.id}" th:text="${convocatoria.convocatoria}"></option>
+					    </select>
+						<br></br>	   
+	
+						<label>Selecciona docente</label>			
+						<select class="form-control" name="docente" id="dropOperator">
+						    <option th:each="persona : ${personas}" th:value="${persona.id}" th:text="${persona.apellidos} + ',' +${persona.nombre} "></option>
+					    </select>
+						<br></br>
+				                   	 
+	                    <div class="form-group">
+	                        <input type="file" name="fichero" accept=".csv, .xls, .txt" class="form-control-file">
+	                    </div>
+	                    <button type="submit" class="btn btn-primary">Subir fichero</button>
+	                </form>
+	                <span th:if="${mensaje != null}" th:text="${msg}"></span>
+	            </div>
+        </div>
+		</div>
+
+
+
+	</div>
+	<!-- /.container -->
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
