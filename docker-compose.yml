@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  unededucaanalisis:
+    container_name: uned-educa-analisis
+    image: uned-educa-analisis-image
+    build: 
+        context: .
+        dockerfile: app.dockerfile
+    ports:
+      - 8090:8090
+    depends_on:
+      - mariadb  
+  mariadb: 
+    container_name: mariadb
+    image: mariadb
+    build:
+        context: .
+        dockerfile: mariadb.dockerfile    
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_DATABASE: test
+      # MARIADB_USER: root
+      # MARIADB_PASSWORD: mypass
+      MARIADB_ROOT_PASSWORD: mypass
+      
+      

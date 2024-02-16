@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3" xmlns:viz="http://gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gexf.net/1.3 http://gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2023-11-02">
+    <creator>Apache NetBeans Platform Dev (Build {0})</creator>
+    <title></title>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="idusuario" title="idUsuario" type="integer"/>
+      <attribute id="fecha" title="fecha" type="string"/>
+    </attributes>
+    <attributes class="edge" mode="static">
+      <attribute id="foro" title="foro" type="integer"/>
+      <attribute id="asignatura" title="asignatura" type="integer"/>
+      <attribute id="numcaracteres" title="numcaracteres" type="integer"/>
+      <attribute id="fechaenvio" title="fechaEnvio" type="string"/>
+    </attributes>
+    <nodes>
+      <node id="191">
+        <attvalues>
+          <attvalue for="idusuario" value="191"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="190">
+        <attvalues>
+          <attvalue for="idusuario" value="190"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="189">
+        <attvalues>
+          <attvalue for="idusuario" value="189"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="188">
+        <attvalues>
+          <attvalue for="idusuario" value="188"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="187">
+        <attvalues>
+          <attvalue for="idusuario" value="187"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="186">
+        <attvalues>
+          <attvalue for="idusuario" value="186"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="185">
+        <attvalues>
+          <attvalue for="idusuario" value="185"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="184">
+        <attvalues>
+          <attvalue for="idusuario" value="184"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+      <node id="183">
+        <attvalues>
+          <attvalue for="idusuario" value="183"/>
+          <attvalue for="fecha" value="2023-10-23 20:06:39.0"/>
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="190" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="88"/>
+          <attvalue for="fechaenvio" value="30/05/2020 17:12:13"/>
+        </attvalues>
+      </edge>
+      <edge id="1" source="191" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="97"/>
+          <attvalue for="fechaenvio" value="31/05/2020 9:15:47"/>
+        </attvalues>
+      </edge>
+      <edge id="2" source="188" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="131"/>
+          <attvalue for="fechaenvio" value="02/06/2020 12:43:41"/>
+        </attvalues>
+      </edge>
+      <edge id="3" source="189" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="82"/>
+          <attvalue for="fechaenvio" value="29/05/2020 17:21:42"/>
+        </attvalues>
+      </edge>
+      <edge id="4" source="183" target="185">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="391"/>
+          <attvalue for="fechaenvio" value="02/06/2020 11:20:25"/>
+        </attvalues>
+      </edge>
+      <edge id="5" source="188" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="67"/>
+          <attvalue for="fechaenvio" value="29/05/2020 15:04:05"/>
+        </attvalues>
+      </edge>
+      <edge id="6" source="187" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="83"/>
+          <attvalue for="fechaenvio" value="29/05/2020 14:30:14"/>
+        </attvalues>
+      </edge>
+      <edge id="7" source="184" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="124"/>
+          <attvalue for="fechaenvio" value="30/05/2020 4:11:36"/>
+        </attvalues>
+      </edge>
+      <edge id="8" source="185" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="63"/>
+          <attvalue for="fechaenvio" value="01/06/2020 21:25:54"/>
+        </attvalues>
+      </edge>
+      <edge id="9" source="186" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="41"/>
+          <attvalue for="fechaenvio" value="03/06/2020 18:36:55"/>
+        </attvalues>
+      </edge>
+      <edge id="10" source="183" target="183">
+        <attvalues>
+          <attvalue for="foro" value="24"/>
+          <attvalue for="asignatura" value="7"/>
+          <attvalue for="numcaracteres" value="1307"/>
+          <attvalue for="fechaenvio" value="29/05/2020 13:38:57"/>
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

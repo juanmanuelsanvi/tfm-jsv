@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/starter-template.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+          	<img src="/images/LogoUNED.jpg" width="30" height="30" alt="">
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/index">Inicio</a></li>
+            <li><a href="#contact">Contacto</a></li>
+			<li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestión de estudios
+			        <span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="/asignatura">Gestión de asignaturas</a></li>
+			          <li><a href="/convocatoria">Gestión de convocatorias</a></li>
+			          <li><a href="/persona">Gestión de personas</a></li>			          
+			          <li><a href="/tareaRevisor">Gestión de tareas de revisor</a></li>
+			        </ul>
+			      </li>                             
+             <li><a href="/importarForo">Importar datos</a></li>
+             <li><a href="/generargrafo">Generar grafo</a></li>
+             <li><a href="/seleccionTareaRevision">Revisión</a></li>             
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+		<h3>Aplicación para la realizacion de minería de datos sobre datos educativos de la UNED </h3>
+
+	<p>	
+	La aplicación para la realización de minería de datos sobre datos educativos de la UNED permite incorporar los datos de los foros asociados 
+	a los cursos virtuales de la UNED, gestionar y manipular dichos datos desde la propia aplicación 
+	y generar una información de salida que facilite al responsable de la asignatura 
+	el proceso de análisis de la interacción entre los alumnos y los profesores, y de esta forma poder establecer procesos de mejora.    
+	</p>
+
+	<h3>Opciones de la aplicación</h3>
+
+	<p>
+	En la parte superior de la aplicación aparecen las siguientes opciones:
+	</p>
+	<ul>
+	  <li><b><a href="/index">Inicio.</a></b>  Pantalla de inicio de la aplicación.</li>
+	  <li><b><a href="/contacto"></a>Contacto.</a></b> Canal para contactar con los responsables del proyecto.</li>
+	  <li><b>Mantenimiento de tablas.</b>Menú desplegable que facilita el acceso al mantenimiento de las diferentes tablas del sistema.</li>
+	  <li><b><a href="/importarForo">Importar datos.</a></b> Permite incorporar datos de los foros de las plataformas de aprendizaje (aLF).</li>
+	  <li><b><a href="/generargrafo">Generar grafo.</a></b> Genera resultados de SNA (Social Network Analysis - Análisis de Redes Sociales).</li>
+	  <li><b><a href="/seleccionTareaRevision">Revisión.</a></b> Genera resultados para OPA (Online Peer Assessment - Evaluación entre pares en línea).</li>	  	  
+	</ul>	
+	
+	<h3>Recursos disponibles</h3>
+	En <a href="https://bitbucket.org/alfonsomartinmurillo/pfg-amm">el repositorio del proyecto</a> se encuentra custodiado el código del proyecto y diversos recursos de utilidad.
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

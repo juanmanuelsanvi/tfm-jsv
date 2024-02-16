@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Starter Template for Bootstrap</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/css/starter-template.css" rel="stylesheet">
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<!-- Incorporo el menú de navegación de la página principal -->
+	<nav th:insert="index.html :: nav">	</nav>
+
+	<div class="container">
+		<div class="starter-template">
+			<h2>Proceso de generación de grafo</h2>
+			El grafo se ha generado satisfactoriamente. A continuación se detallan los elementos que conforman dicho grafo, así como la posibilidad
+			de descargarse el fichero con toda la información, para su integración en herramientas de explotación analítica.			
+			<table class="table">
+				<thead>
+					<tr style="text-align: center">
+						<td><b ></b></td>
+						<td><b style="text-align: center">Valor</b></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><b>Número de nodos. </b>Los elementos que conforman el grafo, en este caso formados por los alumnos 
+						y profesores de las asignaturas</td>
+						<td th:text="${nodos}" style="text-align: center" >..</td>
+					</tr>
+					<tr>
+						<td><b>Número de aristas. </b>Las conexiones existentes entre los diferentes nodos, y que en este caso representan 
+						los mensajes enviados desde un nodo A a un nodo B.</td>
+						<td th:text="${aristas}" style="text-align: center">..</td>
+					</tr>
+					<tr>	
+						<td><b>Fichero gephi. </b>Archivo en formato gephi con el contenido completo del grafo.</td>
+						<td><a th:href="@{/descargagrafo}" style="text-align: center">Grafo dirigido</a></td>
+					</tr>
+				</tbody>	
+			</table>
+			
+			<h2>Matriz de adyacencia</h2>			
+			<table class="table" >
+				<thead>				
+					<tr th:each="fila: ${matriz}">
+        				<td th:each="valor: ${fila}" th:text="${valor}" />
+					</tr>
+			</table>
+			
+			<h2>Indicadores</h2>			
+			<table class="table" >
+				<thead>
+					<tr >
+						<th> </th>
+					    <th style="text-align: center"> Iniciativa </th>
+					    <th style="text-align: center"> Actividad </th>
+					    <th style="text-align: center"> Popularidad </th>
+					    <th style="text-align: center"> Cercanía (Closeness Centrality) </th>
+					    <th style="text-align: center"> Intermediación (Betweenness Centrality) </th>
+					    <th style="text-align: center"> Centralidad del vector propio(Eigenvector) </th>
+					    <th style="text-align: center"> Modularidad </th>
+					</tr>					
+				</thead>
+				<tbody>
+				  <tr th:each = "indicador : ${listaIndicadores}">
+				  	<td style="text-align: center" th:text = "${indicador.id}"> 	</td>
+				  	<td style="text-align: center" th:text = "${indicador.iniciativa}"> 	</td>
+				  	<td style="text-align: center" th:text = "${indicador.actividad}"> 	</td>
+				  	<td style="text-align: center" th:text = "${indicador.popularidad}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.closeness}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.betweenness}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.eigenvector}"> 	</td>
+				  	<td style="text-align: center" th:text="${indicador.modularidad}"> 	</td>
+				  </tr>
+				   
+				</tbody>
+			</table>
+			
+			<h2>Imágenes</h2>
+			<table class="table" >
+				<thead>
+				</thead>
+				<tbody>
+					<tr> 
+				   	  <td style="text-align: center">
+				   	  	<h3 style="text-align: center">PREVISUALIZACIÓN DEL GRAFO</h3> 
+						<img src="/images/grafo.png" width="1000px" heigh="1000px" alt="">
+					  </td>
+				   	</tr>
+					<tr>  
+				   	  <td style="text-align: center"> 
+				   	  	<img src="/images/Closeness Centrality Distribution.png" width="800px" alt="">
+				   	  </td>
+				   	</tr> 
+					<tr>
+				   	  <td style="text-align: center"> 
+				   	  	<img src="/images/Betweenness Centrality Distribution.png" width="800px" alt=""> 
+				   	  </td>
+				   	</tr>  
+				   	<tr>  
+				   	  <td style="text-align: center"> 
+				   	  	<img src="/images/eigenvector-centralities.png" width="800px" alt="">
+				   	  </td>
+				   	</tr>  
+				   	<tr>  
+				   	  <td style="text-align: center"> 
+				   	  	<img src="/images/communities-size-distribution.png" width="800px" alt="">
+				   	  </td>				   	  
+				   	</tr>
+				</tbody>			
+			</table>
+		</div>
+	</div>
+	
+	<!-- /.container -->
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
